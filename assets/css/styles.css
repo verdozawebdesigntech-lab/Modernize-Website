@@ -6,6 +6,7 @@
   --radius:10px;
   --container:1100px;
   --gap:24px;
+  --header-height:64px;
 }
 
 /* Optional: load Inter from Google Fonts (uncomment if desired)
@@ -22,6 +23,7 @@ body{
   line-height:1.5;
 }
 
+/* Layout container */
 .container{
   max-width:var(--container);
   margin:0 auto;
@@ -29,15 +31,26 @@ body{
   gap:var(--gap);
 }
 
-/* Header */
+/* Header visual separation and sticky behavior */
 .site-header{
-  background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
-  backdrop-filter:saturate(120%) blur(4px);
+  background:linear-gradient(180deg, rgba(250,250,252,0.95), rgba(245,247,250,0.92));
+  backdrop-filter:saturate(120%) blur(6px);
   position:sticky;
   top:0;
   z-index:30;
-  border-bottom:1px solid rgba(0,0,0,0.04);
+  border-bottom:1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 6px 18px rgba(10,20,40,0.03);
+  height:var(--header-height);
 }
+
+/* Darker variant you can toggle by adding the class site-header--dark */
+.site-header--dark{
+  background:linear-gradient(180deg, rgba(238,241,246,0.98), rgba(233,236,241,0.98));
+  border-bottom-color: rgba(0,0,0,0.08);
+  box-shadow: 0 8px 28px rgba(10,20,40,0.05);
+}
+
+/* Header inner layout */
 .header-inner{
   display:flex;
   align-items:center;
@@ -46,28 +59,20 @@ body{
 }
 .brand{
   font-weight:700;
-  color:#111;
+  color:#0b1630;
   text-decoration:none;
 }
 .nav{
   display:flex;
   align-items:center;
-  gap:20px; /* use gap instead of margin-left on links */
+  gap:20px;
 }
 .nav a{
   text-decoration:none;
   color:#111;
 }
-.nav a:focus-visible,
-.nav-toggle:focus-visible,
-.btn-primary:focus-visible,
-.btn-outline:focus-visible{
-  outline:3px solid rgba(11,116,222,0.18);
-  outline-offset:2px;
-  border-radius:8px;
-}
 
-/* mobile nav toggle: hidden on desktop */
+/* Mobile nav toggle: hidden on desktop */
 .nav-toggle{
   display:none;
   background:transparent;
@@ -75,6 +80,7 @@ body{
   font-size:1.25rem;
   line-height:1;
   cursor:pointer;
+  color:#0b1630;
 }
 
 /* Buttons */
@@ -96,6 +102,16 @@ body{
   background:transparent;
   display:inline-block;
   cursor:pointer;
+}
+
+/* Focus-visible styles for accessibility */
+.nav a:focus-visible,
+.nav-toggle:focus-visible,
+.btn-primary:focus-visible,
+.btn-outline:focus-visible{
+  outline:3px solid rgba(11,116,222,0.18);
+  outline-offset:2px;
+  border-radius:8px;
 }
 
 /* Hero */
@@ -172,6 +188,14 @@ body{
 /* utility for responsive images */
 .img-responsive{max-width:100%;height:auto;display:block}
 
+/* mobile nav open state (used with JS toggle) */
+.nav.open{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  padding:12px 0;
+}
+
 /* responsive */
 @media (max-width:860px){
   .hero-inner{flex-direction:column-reverse;text-align:center}
@@ -180,6 +204,11 @@ body{
   .nav{display:none}
   .nav-toggle{display:inline-block}
   .footer-inner{flex-direction:column;gap:12px;text-align:center}
+}
+
+/* avoid content hiding under the sticky header */
+@supports (position:sticky) {
+  main{ padding-top: calc(var(--header-height) + 8px); }
 }
 
 /* reduce motion preference */
