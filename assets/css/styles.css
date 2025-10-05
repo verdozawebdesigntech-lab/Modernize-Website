@@ -494,3 +494,54 @@ body{
   opacity: 0.98;
   outline: none;
 }
+
+@media (max-width:860px) {
+  /* ensure header inner is positioned so the dropdown can be placed relative to it */
+  .header-inner { position: relative; z-index: 50; }
+
+  /* dropdown panel that appears when .nav.open is applied */
+  .nav.open {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    position: absolute;
+    right: 16px;                /* align to top-right of header */
+    top: calc(var(--header-height) + 8px);
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 18px 40px rgba(11,20,40,0.12);
+    border: 1px solid rgba(11,20,40,0.06);
+    width: min(92vw, 320px);
+    max-width: 320px;
+    z-index: 60;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+  }
+
+  /* Make links large and easy to tap */
+  .nav.open a {
+    display: block;
+    padding: 10px 12px;
+    color: #0b1630;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 8px;
+  }
+
+  /* Hover/focus states inside panel */
+  .nav.open a:hover,
+  .nav.open a:focus-visible {
+    background: rgba(11,116,222,0.06);
+    outline: none;
+    transform: none;
+  }
+
+  /* If you want the "Contact" or CTA to stand out */
+  .nav.open a.nav-link {
+    background: var(--accent);
+    color: #fff;
+    font-weight: 800;
+    text-align: center;
+  }
+}
