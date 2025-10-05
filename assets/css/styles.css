@@ -202,6 +202,12 @@ body{
   .hero-image{text-align:center}
   .lead-inner{flex-direction:column;gap:12px}
   .nav{display:none}
+  .nav.open {
+    display:flex;
+    flex-direction: column;
+    gap:12px;
+    padding: 12px 0;
+  }
   .nav-toggle{display:inline-block}
   .footer-inner{flex-direction:column;gap:12px;text-align:center}
 }
