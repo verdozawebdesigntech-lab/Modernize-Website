@@ -445,3 +445,46 @@ body{
   .hero-copy { padding: 0 14px; }
   .hero-copy h1 { font-size: 1.4rem; }
 }
+
+/* fix hero background image filename (remove duplicate .jpg if present) */
+.hero {
+  background-image: url("/assets/img/resturant-hero.jpg.jpg"); /* <-- correct filename */
+}
+
+/* Make the secondary CTA visually identical to the primary inside the hero */
+.hero .btn-outline,
+.hero .btn-primary {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(11,20,40,0.08);
+  transition: transform .14s ease, box-shadow .14s ease, opacity .14s ease;
+}
+
+/* Primary look (keeps your accent variable) */
+.hero .btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.06);
+}
+
+/* Make outline identical to primary */
+.hero .btn-outline {
+  background: var(--accent);
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.06);
+}
+
+/* Hover / focus states */
+.hero .btn-primary:hover,
+.hero .btn-outline:hover,
+.hero .btn-primary:focus-visible,
+.hero .btn-outline:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(11,20,40,0.12);
+  opacity: 0.98;
+  outline: none;
+}
