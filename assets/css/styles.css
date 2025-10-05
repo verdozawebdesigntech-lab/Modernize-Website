@@ -1,7 +1,7 @@
 :root{
   --bg:#f7f7f8;
   --card:#ffffff;
-  --accent:#011120;
+  --accent:#195c9a;
   --muted:#6b7280;
   --radius:10px;
   --container:1100px;
@@ -38,7 +38,7 @@ body{
   position:sticky;
   top:0;
   z-index:30;
-  border-bottom:100px solid rgba(0,0,0,0.06);
+  border-bottom:10px solid rgba(0,0,0,0.06);
   box-shadow: 0 6px 18px rgba(10,20,40,0.03);
   height:var(--header-height);
 }
@@ -215,5 +215,6 @@ body{
 @media (prefers-reduced-motion: reduce){
   *{transition:none!important;animation:none!important}
 }
+
 
 
