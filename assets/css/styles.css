@@ -377,16 +377,6 @@ body{
     backdrop-filter: blur(6px);
   }
 
-  /* Make links large and easy to tap */
-  .nav.open a {
-    display: block;
-    padding: 10px 12px;
-    color: #0b1630;
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: 8px;
-  }
-
   /* Hover/focus states inside panel */
   .nav.open a:hover,
   .nav.open a:focus-visible {
@@ -398,7 +388,7 @@ body{
   /* If you want the "Contact" or CTA to stand out */
   .nav.open a.nav-link {
     background: var(--accent);
-    color: #fff;
+    color: #111;
     font-weight: 800;
     text-align: center;
   }
