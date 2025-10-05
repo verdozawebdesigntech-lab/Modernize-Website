@@ -1,7 +1,7 @@
 :root{
     --bg:#f7f7f8;
     --card:#ffffff;
-    --accent:#011120;
+    --accent:#2265a4;
     --muted:#6b7280;
     --radius:10px;
     --container:1100px;
@@ -215,4 +215,5 @@
   @media (prefers-reduced-motion: reduce){
     *{transition:none!important;animation:none!important}
   }
+
   
