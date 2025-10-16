@@ -461,7 +461,7 @@ body{
   min-height: 64vh;
   display: flex;
   align-items: center;
-  background-image: url(/assets/img/resturant-hero.jpg.jpg); /* <-- update to your filename */
+  background-image: url(/assets/img/Modernized-Web-head.jpg); /* <-- update to your filename */
   background-size: cover;
   background-position: center 30%;
   background-repeat: no-repeat;
@@ -508,7 +508,7 @@ body{
 
 /* fix hero background image filename (remove duplicate .jpg if present) */
 .hero {
-  background-image: url("/assets/img/resturant-hero.jpg.jpg"); /* <-- correct filename */
+  background-image: url("/assets/img/Modernized-Web-head.jpg"); /* <-- correct filename */
 }
 
 /* Make the secondary CTA visually identical to the primary inside the hero */
