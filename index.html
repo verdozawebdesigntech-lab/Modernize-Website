@@ -61,7 +61,18 @@
         </div>
 
         <div class="hero-image" aria-hidden="false">
-          <img src="assets/img/Modernized-Web-head.jpg" alt="Modern restaurant storefront with people dining" width="800" height="533" />
+          
+            <img
+            src="./assets/img/Modernized-Web-head.jpg"
+            srcset="./assets/img/Modernized-Web-head@480.jpg 480w, ./assets/img/Modernized-Web-head@800.jpg 800w"
+            sizes="(max-width:600px) 100vw, 420px"
+            alt="Modern restaurant storefront with people dining"
+            class="img-responsive"
+            loading="lazy"
+            width="800"
+            height="533"
+            />
+
         </div>
       </div>
     </section>

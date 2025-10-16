@@ -583,3 +583,26 @@ body{
   opacity: 0.98;
   outline: none;
 }
+
+.hero-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  width: 420px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(11,20,40,0.06);
+  display: block;
+}
+@media (max-width:860px){
+  .hero-image img {
+    width: 100%;
+    max-width: 320px;
+    margin-bottom: 16px;
+  }
+}
